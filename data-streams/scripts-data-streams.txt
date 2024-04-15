@@ -1,0 +1,252 @@
+/*********************/
+Increasing IR + Merge
+/*********************/
+WriteStreamToARFFFile -s (ConceptDriftStream -s (moa.streams.generators.ImbalancedGenerator -r 1 -i 1 -a 5 -n 5 -m 0.10 -s 1 -b 0 -p 0 -o 0 -u) -r 1 -d (moa.streams.generators.ImbalancedGenerator -r 2 -i 2 -a 5 -n 1 -m 0.03 -s 1 -b 0 -p 0 -o 0 -u) -p 20000 -w 10000) -f EMRIL\brz50K_inc10To3merge_grad.arff -m 50000
+
+WriteStreamToARFFFile -s (ConceptDriftStream -s (moa.streams.generators.ImbalancedGenerator -r 1 -i 1 -a 5 -n 5 -m 0.10 -s 1 -b 0 -p 0 -o 0 -u) -r 1 -d (moa.streams.generators.ImbalancedGenerator -r 2 -i 2 -a 5 -n 1 -m 0.03 -s 1 -b 0 -p 0 -o 0 -u) -p 20000 -w 1) -f EMRIL\brz50K_inc10To3merge_abr.arff -m 50000
+
+WriteStreamToARFFFile -s (ConceptDriftStream -s (moa.streams.generators.ImbalancedGenerator -r 1 -i 1 -a 5 -n 5 -m 0.05 -s 1 -b 0 -p 0 -o 0 -u) -r 1 -d (moa.streams.generators.ImbalancedGenerator -r 2 -i 2 -a 5 -n 1 -m 0.01 -s 1 -b 0 -p 0 -o 0 -u) -p 20000 -w 10000) -f EMRIL\brz50K_inc5To1merge_grad.arff -m 50000
+
+WriteStreamToARFFFile -s (ConceptDriftStream -s (moa.streams.generators.ImbalancedGenerator -r 1 -i 1 -a 5 -n 5 -m 0.05 -s 1 -b 0 -p 0 -o 0 -u) -r 1 -d (moa.streams.generators.ImbalancedGenerator -r 2 -i 2 -a 5 -n 1 -m 0.01 -s 1 -b 0 -p 0 -o 0 -u) -p 20000 -w 1) -f EMRIL\brz50K_inc5To1merge_abr.arff -m 50000
+
+
+
+/*********************************/
+Increasing IR + Splitting Clusters
+/*********************************/
+WriteStreamToARFFFile -s (ConceptDriftStream -s (moa.streams.generators.ImbalancedGenerator -r 1 -i 1 -a 5 -n 1 -m 0.10 -s 1 -b 0 -p 0 -o 0 -u) -r 1 -d (moa.streams.generators.ImbalancedGenerator -r 2 -i 2 -a 5 -n 5 -m 0.03 -s 1 -b 0 -p 0 -o 0 -u) -p 20000 -w 10000) -f EMRIL\brz50K_inc10To3split_grad.arff -m 50000
+
+WriteStreamToARFFFile -s (ConceptDriftStream -s (moa.streams.generators.ImbalancedGenerator -r 1 -i 1 -a 5 -n 1 -m 0.10 -s 1 -b 0 -p 0 -o 0 -u) -r 1 -d (moa.streams.generators.ImbalancedGenerator -r 2 -i 2 -a 5 -n 5 -m 0.03 -s 1 -b 0 -p 0 -o 0 -u) -p 20000 -w 1) -f EMRIL\brz50K_inc10To3split_abr.arff -m 50000
+
+
+WriteStreamToARFFFile -s (ConceptDriftStream -s (moa.streams.generators.ImbalancedGenerator -r 1 -i 1 -a 5 -n 1 -m 0.05 -s 1 -b 0 -p 0 -o 0 -u) -r 1 -d (moa.streams.generators.ImbalancedGenerator -r 2 -i 2 -a 5 -n 5 -m 0.01 -s 1 -b 0 -p 0 -o 0 -u) -p 20000 -w 10000) -f EMRIL\brz50K_inc5To1split_grad.arff -m 50000
+
+WriteStreamToARFFFile -s (ConceptDriftStream -s (moa.streams.generators.ImbalancedGenerator -r 1 -i 1 -a 5 -n 1 -m 0.05 -s 1 -b 0 -p 0 -o 0 -u) -r 1 -d (moa.streams.generators.ImbalancedGenerator -r 2 -i 2 -a 5 -n 5 -m 0.01 -s 1 -b 0 -p 0 -o 0 -u) -p 20000 -w 1) -f EMRIL\brz50K_inc5To1split_abr.arff -m 50000
+
+
+/**************************/
+Increasing IR + Moving Clusters
+/*************************/
+WriteStreamToARFFFile -s (ConceptDriftStream -s (moa.streams.generators.ImbalancedGenerator -r 1 -i 1 -a 5 -n 1 -m 0.50 -s 1 -b 0 -p 0 -o 0 -u) -r 1 -d (ConceptDriftStream -s (moa.streams.generators.ImbalancedGenerator -r 2 -i 2 -a 5 -n 1 -m 0.20 -s 1 -b 0 -p 0 -o 0 -u) -r 2 -d (ConceptDriftStream -s (moa.streams.generators.ImbalancedGenerator -r 3 -i 3 -a 5 -n 1 -m 0.10 -s 1 -b 0 -p 0 -o 0 -u) -r 3 -d (ConceptDriftStream -s (moa.streams.generators.ImbalancedGenerator -r 4 -i 4 -a 5 -n 1 -m 0.05 -s 1 -b 0 -p 0 -o 0 -u) -r 4 -d (moa.streams.generators.ImbalancedGenerator -r 5 -i 5 -a 5 -n 1 -m 0.01 -s 1 -b 0 -p 0 -o 0 -u) -r 5 -p 10000 -w 5000) -p 10000 -w 5000) -p 10000 -w 5000) -p 10000 -w 5000	) -f EMRIL\brz50K_inc50To1move_grad.arff -m 50000	
+			
+WriteStreamToARFFFile -s (ConceptDriftStream -s (moa.streams.generators.ImbalancedGenerator -r 1 -i 1 -a 5 -n 1 -m 0.50 -s 1 -b 0 -p 0 -o 0 -u) -r 1 -d (ConceptDriftStream -s (moa.streams.generators.ImbalancedGenerator -r 2 -i 2 -a 5 -n 1 -m 0.20 -s 1 -b 0 -p 0 -o 0 -u) -r 2 -d (ConceptDriftStream -s (moa.streams.generators.ImbalancedGenerator -r 3 -i 3 -a 5 -n 1 -m 0.10 -s 1 -b 0 -p 0 -o 0 -u) -r 3 -d (ConceptDriftStream -s (moa.streams.generators.ImbalancedGenerator -r 4 -i 4 -a 5 -n 1 -m 0.05 -s 1 -b 0 -p 0 -o 0 -u) -r 4 -d (moa.streams.generators.ImbalancedGenerator -r 5 -i 5 -a 5 -n 1 -m 0.01 -s 1 -b 0 -p 0 -o 0 -u) -r 5 -p 10000 -w 1) -p 10000 -w 1) -p 10000 -w 1) -p 10000 -w 1	) -f EMRIL\brz50K_inc50To1move_abr.arff -m 50000
+
+WriteStreamToARFFFile -s (ConceptDriftStream -s (moa.streams.generators.ImbalancedGenerator -r 1 -i 1 -a 5 -n 1 -m 0.05 -s 1 -b 0 -p 0 -o 0 -u) -r 1 -d (ConceptDriftStream -s (moa.streams.generators.ImbalancedGenerator -r 2 -i 2 -a 5 -n 1 -m 0.04 -s 1 -b 0 -p 0 -o 0 -u) -r 2 -d (ConceptDriftStream -s (moa.streams.generators.ImbalancedGenerator -r 3 -i 3 -a 5 -n 1 -m 0.03 -s 1 -b 0 -p 0 -o 0 -u) -r 3 -d (ConceptDriftStream -s (moa.streams.generators.ImbalancedGenerator -r 4 -i 4 -a 5 -n 1 -m 0.02 -s 1 -b 0 -p 0 -o 0 -u) -r 4 -d (moa.streams.generators.ImbalancedGenerator -r 5 -i 5 -a 5 -n 1 -m 0.01 -s 1 -b 0 -p 0 -o 0 -u) -r 5 -p 10000 -w 5000) -p 10000 -w 5000) -p 10000 -w 5000) -p 10000 -w 5000	) -f EMRIL\brz50K_inc5To1move_grad.arff -m 50000	
+			
+WriteStreamToARFFFile -s (ConceptDriftStream -s (moa.streams.generators.ImbalancedGenerator -r 1 -i 1 -a 5 -n 1 -m 0.05 -s 1 -b 0 -p 0 -o 0 -u) -r 1 -d (ConceptDriftStream -s (moa.streams.generators.ImbalancedGenerator -r 2 -i 2 -a 5 -n 1 -m 0.04 -s 1 -b 0 -p 0 -o 0 -u) -r 2 -d (ConceptDriftStream -s (moa.streams.generators.ImbalancedGenerator -r 3 -i 3 -a 5 -n 1 -m 0.03 -s 1 -b 0 -p 0 -o 0 -u) -r 3 -d (ConceptDriftStream -s (moa.streams.generators.ImbalancedGenerator -r 4 -i 4 -a 5 -n 1 -m 0.02 -s 1 -b 0 -p 0 -o 0 -u) -r 4 -d (moa.streams.generators.ImbalancedGenerator -r 5 -i 5 -a 5 -n 1 -m 0.01 -s 1 -b 0 -p 0 -o 0 -u) -r 5 -p 10000 -w 1) -p 10000 -w 1) -p 10000 -w 1) -p 10000 -w 1	) -f EMRIL\brz50K_inc5To1move_abr.arff -m 50000
+
+/************************************/
+Increasing IR + increasing Borderline
+/***********************************/
+WriteStreamToARFFFile -s (ConceptDriftStream -s (moa.streams.generators.ImbalancedGenerator -r 1 -i 1 -a 5 -n 1 -m 0.50 -s 0.8 -b 0.2 -p 0 -o 0 -u) -r 1 -d (ConceptDriftStream -s (moa.streams.generators.ImbalancedGenerator -r 1 -i 2 -a 5 -n 1 -m 0.20 -s 0.6 -b 0.4 -p 0 -o 0 -u) -r 2 -d (ConceptDriftStream -s (moa.streams.generators.ImbalancedGenerator -r 1 -i 3 -a 5 -n 1 -m 0.10 -s 0.4 -b 0.6 -p 0 -o 0 -u) -r 3 -d (ConceptDriftStream -s (moa.streams.generators.ImbalancedGenerator -r 1 -i 4 -a 5 -n 1 -m 0.05 -s 0.2 -b 0.8 -p 0 -o 0 -u) -r 4 -d (moa.streams.generators.ImbalancedGenerator -r 1 -i 5 -a 5 -n 1 -m 0.01 -s 0.0 -b 1.0 -p 0 -o 0 -u) -r 5 -p 10000 -w 5000) -p 10000 -w 5000) -p 10000 -w 5000) -p 10000 -w 5000) -f EMRIL\brz50K_inc50To1border_gradual.arff -m 50000
+
+WriteStreamToARFFFile -s (ConceptDriftStream -s (moa.streams.generators.ImbalancedGenerator -r 1 -i 1 -a 5 -n 1 -m 0.50 -s 0.8 -b 0.2 -p 0 -o 0 -u) -r 1 -d (ConceptDriftStream -s (moa.streams.generators.ImbalancedGenerator -r 1 -i 2 -a 5 -n 1 -m 0.20 -s 0.6 -b 0.4 -p 0 -o 0 -u) -r 2 -d (ConceptDriftStream -s (moa.streams.generators.ImbalancedGenerator -r 1 -i 3 -a 5 -n 1 -m 0.10 -s 0.4 -b 0.6 -p 0 -o 0 -u) -r 3 -d (ConceptDriftStream -s (moa.streams.generators.ImbalancedGenerator -r 1 -i 4 -a 5 -n 1 -m 0.05 -s 0.2 -b 0.8 -p 0 -o 0 -u) -r 4 -d (moa.streams.generators.ImbalancedGenerator -r 1 -i 5 -a 5 -n 1 -m 0.01 -s 0.0 -b 1.0 -p 0 -o 0 -u) -r 5 -p 10000 -w 1) -p 10000 -w 1) -p 10000 -w 1) -p 10000 -w 1) -f EMRIL\brz50K_inc50To1border_abr.arff -m 50000
+
+/********************************/
+Increasing IR + increasing Rare
+/********************************/
+WriteStreamToARFFFile -s (ConceptDriftStream -s (moa.streams.generators.ImbalancedGenerator -r 1 -i 1 -a 5 -n 1 -m 0.50 -s 0.8 -b 0 -p 0.2 -o 0 -u) -r 1 -d (ConceptDriftStream -s (moa.streams.generators.ImbalancedGenerator -r 1 -i 2 -a 5 -n 1 -m 0.20 -s 0.6 -b 0 -p 0.4 -o 0 -u) -r 2 -d (ConceptDriftStream -s (moa.streams.generators.ImbalancedGenerator -r 1 -i 3 -a 5 -n 1 -m 0.10 -s 0.4 -b 0 -p 0.6 -o 0 -u) -r 3 -d (ConceptDriftStream -s (moa.streams.generators.ImbalancedGenerator -r 1 -i 4 -a 5 -n 1 -m 0.05 -s 0.2 -b 0 -p 0.8 -o 0 -u) -r 4 -d (moa.streams.generators.ImbalancedGenerator -r 1 -i 5 -a 5 -n 1 -m 0.01 -s 0.0 -b 0 -p 1.0 -o 0 -u) -r 5 -p 10000 -w 5000) -p 10000 -w 5000) -p 10000 -w 5000) -p 10000 -w 5000) -f EMRIL\brz50K_inc50To1rare_gradual.arff -m 50000
+
+WriteStreamToARFFFile -s (ConceptDriftStream -s (moa.streams.generators.ImbalancedGenerator -r 1 -i 1 -a 5 -n 1 -m 0.50 -s 0.8 -b 0 -p 0.2 -o 0 -u) -r 1 -d (ConceptDriftStream -s (moa.streams.generators.ImbalancedGenerator -r 1 -i 2 -a 5 -n 1 -m 0.20 -s 0.6 -b 0 -p 0.4 -o 0 -u) -r 2 -d (ConceptDriftStream -s (moa.streams.generators.ImbalancedGenerator -r 1 -i 3 -a 5 -n 1 -m 0.10 -s 0.4 -b 0 -p 0.6 -o 0 -u) -r 3 -d (ConceptDriftStream -s (moa.streams.generators.ImbalancedGenerator -r 1 -i 4 -a 5 -n 1 -m 0.05 -s 0.2 -b 0 -p 0.8 -o 0 -u) -r 4 -d (moa.streams.generators.ImbalancedGenerator -r 1 -i 5 -a 5 -n 1 -m 0.01 -s 0.0 -b 0 -p 1.0 -o 0 -u) -r 5 -p 10000 -w 1) -p 1 -w 1) -p 10000 -w 1) -p 10000 -w 1) -f EMRIL\brz50K_inc50To1rare_abr.arff -m 50000
+
+/***************************/
+Static IR + Moving Clusters
+/***************************/
+WriteStreamToARFFFile -s (ConceptDriftStream -s (moa.streams.generators.ImbalancedGenerator -r 1 -i 1 -a 5 -n 1 -m 0.10 -s 1 -b 0 -p 0 -o 0 -u) -r 1 -d (ConceptDriftStream -s (moa.streams.generators.ImbalancedGenerator -r 2 -i 2 -a 5 -n 1 -m 0.10 -s 1 -b 0 -p 0 -o 0 -u) -r 2  -d (ConceptDriftStream -s (moa.streams.generators.ImbalancedGenerator -r 3 -i 3 -a 5 -n 1 -m 0.10 -s 1 -b 0 -p 0 -o 0 -u) -r 3  -d (ConceptDriftStream -s (moa.streams.generators.ImbalancedGenerator -r 4 -i 4 -a 5 -n 1 -m 0.10 -s 1 -b 0 -p 0 -o 0 -u) -r 4  -d (moa.streams.generators.ImbalancedGenerator -r 5 -i 5 -a 5 -n 1 -m 0.10 -s 1 -b 0 -p 0 -o 0 -u) -r 5  -p 10000 -w 5000) -p 10000 -w 5000)  -p 10000 -w 5000)  -p 10000 -w 5000) -f EMRIL\brz50K_static10move_gradual.arff -m 50000
+
+WriteStreamToARFFFile -s (ConceptDriftStream -s (moa.streams.generators.ImbalancedGenerator -r 1 -i 1 -a 5 -n 1 -m 0.05 -s 1 -b 0 -p 0 -o 0 -u) -r 1 -d (ConceptDriftStream -s (moa.streams.generators.ImbalancedGenerator -r 2 -i 2 -a 5 -n 1 -m 0.05 -s 1 -b 0 -p 0 -o 0 -u) -r 2  -d (ConceptDriftStream -s (moa.streams.generators.ImbalancedGenerator -r 3 -i 3 -a 5 -n 1 -m 0.05 -s 1 -b 0 -p 0 -o 0 -u) -r 3  -d (ConceptDriftStream -s (moa.streams.generators.ImbalancedGenerator -r 4 -i 4 -a 5 -n 1 -m 0.05 -s 1 -b 0 -p 0 -o 0 -u) -r 4  -d (moa.streams.generators.ImbalancedGenerator -r 5 -i 5 -a 5 -n 1 -m 0.05 -s 1 -b 0 -p 0 -o 0 -u) -r 5  -p 10000 -w 5000) -p 10000 -w 5000)  -p 10000 -w 5000)  -p 10000 -w 5000) -f EMRIL\brz50K_static05move_gradual.arff -m 50000
+
+WriteStreamToARFFFile -s (ConceptDriftStream -s (moa.streams.generators.ImbalancedGenerator -r 1 -i 1 -a 5 -n 1 -m 0.03 -s 1 -b 0 -p 0 -o 0 -u) -r 1 -d (ConceptDriftStream -s (moa.streams.generators.ImbalancedGenerator -r 2 -i 2 -a 5 -n 1 -m 0.03 -s 1 -b 0 -p 0 -o 0 -u) -r 2  -d (ConceptDriftStream -s (moa.streams.generators.ImbalancedGenerator -r 3 -i 3 -a 5 -n 1 -m 0.03 -s 1 -b 0 -p 0 -o 0 -u) -r 3  -d (ConceptDriftStream -s (moa.streams.generators.ImbalancedGenerator -r 4 -i 4 -a 5 -n 1 -m 0.03 -s 1 -b 0 -p 0 -o 0 -u) -r 4  -d (moa.streams.generators.ImbalancedGenerator -r 5 -i 5 -a 5 -n 1 -m 0.03 -s 1 -b 0 -p 0 -o 0 -u) -r 5  -p 10000 -w 5000) -p 10000 -w 5000)  -p 10000 -w 5000)  -p 10000 -w 5000) -f EMRIL\brz50K_static03move_gradual.arff -m 50000
+
+WriteStreamToARFFFile -s (ConceptDriftStream -s (moa.streams.generators.ImbalancedGenerator -r 1 -i 1 -a 5 -n 1 -m 0.01 -s 1 -b 0 -p 0 -o 0 -u) -r 1 -d (ConceptDriftStream -s (moa.streams.generators.ImbalancedGenerator -r 2 -i 2 -a 5 -n 1 -m 0.01 -s 1 -b 0 -p 0 -o 0 -u) -r 2  -d (ConceptDriftStream -s (moa.streams.generators.ImbalancedGenerator -r 3 -i 3 -a 5 -n 1 -m 0.01 -s 1 -b 0 -p 0 -o 0 -u) -r 3  -d (ConceptDriftStream -s (moa.streams.generators.ImbalancedGenerator -r 4 -i 4 -a 5 -n 1 -m 0.01 -s 1 -b 0 -p 0 -o 0 -u) -r 4  -d (moa.streams.generators.ImbalancedGenerator -r 5 -i 5 -a 5 -n 1 -m 0.01 -s 1 -b 0 -p 0 -o 0 -u) -r 5  -p 10000 -w 5000) -p 10000 -w 5000)  -p 10000 -w 5000)  -p 10000 -w 5000) -f EMRIL\brz50K_static01move_gradual.arff -m 50000
+
+WriteStreamToARFFFile -s (ConceptDriftStream -s (moa.streams.generators.ImbalancedGenerator -r 1 -i 1 -a 5 -n 1 -m 0.10 -s 1 -b 0 -p 0 -o 0 -u) -r 1 -d (ConceptDriftStream -s (moa.streams.generators.ImbalancedGenerator -r 2 -i 2 -a 5 -n 1 -m 0.10 -s 1 -b 0 -p 0 -o 0 -u) -r 2  -d (ConceptDriftStream -s (moa.streams.generators.ImbalancedGenerator -r 3 -i 3 -a 5 -n 1 -m 0.10 -s 1 -b 0 -p 0 -o 0 -u) -r 3  -d (ConceptDriftStream -s (moa.streams.generators.ImbalancedGenerator -r 4 -i 4 -a 5 -n 1 -m 0.10 -s 1 -b 0 -p 0 -o 0 -u) -r 4  -d (moa.streams.generators.ImbalancedGenerator -r 5 -i 5 -a 5 -n 1 -m 0.10 -s 1 -b 0 -p 0 -o 0 -u) -r 5  -p 10000 -w 1) -p 10000 -w 1)  -p 1 -w 1)  -p 10000 -w 1) -f EMRIL\brz50K_static10move_abrupt.arff -m 50000
+
+WriteStreamToARFFFile -s (ConceptDriftStream -s (moa.streams.generators.ImbalancedGenerator -r 1 -i 1 -a 5 -n 1 -m 0.05 -s 1 -b 0 -p 0 -o 0 -u) -r 1 -d (ConceptDriftStream -s (moa.streams.generators.ImbalancedGenerator -r 2 -i 2 -a 5 -n 1 -m 0.05 -s 1 -b 0 -p 0 -o 0 -u) -r 2  -d (ConceptDriftStream -s (moa.streams.generators.ImbalancedGenerator -r 3 -i 3 -a 5 -n 1 -m 0.05 -s 1 -b 0 -p 0 -o 0 -u) -r 3  -d (ConceptDriftStream -s (moa.streams.generators.ImbalancedGenerator -r 4 -i 4 -a 5 -n 1 -m 0.05 -s 1 -b 0 -p 0 -o 0 -u) -r 4  -d (moa.streams.generators.ImbalancedGenerator -r 5 -i 5 -a 5 -n 1 -m 0.05 -s 1 -b 0 -p 0 -o 0 -u) -r 5  -p 10000 -w 1) -p 10000 -w 1)  -p 10000 -w 1)  -p 10000 -w 1) -f EMRIL\brz50K_static05move_abrupt.arff -m 50000
+
+WriteStreamToARFFFile -s (ConceptDriftStream -s (moa.streams.generators.ImbalancedGenerator -r 1 -i 1 -a 5 -n 1 -m 0.03 -s 1 -b 0 -p 0 -o 0 -u) -r 1 -d (ConceptDriftStream -s (moa.streams.generators.ImbalancedGenerator -r 2 -i 2 -a 5 -n 1 -m 0.03 -s 1 -b 0 -p 0 -o 0 -u) -r 2  -d (ConceptDriftStream -s (moa.streams.generators.ImbalancedGenerator -r 3 -i 3 -a 5 -n 1 -m 0.03 -s 1 -b 0 -p 0 -o 0 -u) -r 3  -d (ConceptDriftStream -s (moa.streams.generators.ImbalancedGenerator -r 4 -i 4 -a 5 -n 1 -m 0.03 -s 1 -b 0 -p 0 -o 0 -u) -r 4  -d (moa.streams.generators.ImbalancedGenerator -r 5 -i 5 -a 5 -n 1 -m 0.03 -s 1 -b 0 -p 0 -o 0 -u) -r 5  -p 10000 -w 1) -p 10000 -w 1)  -p 10000 -w 1)  -p 10000 -w 1) -f EMRIL\brz50K_static03move_abrupt.arff -m 50000
+
+WriteStreamToARFFFile -s (ConceptDriftStream -s (moa.streams.generators.ImbalancedGenerator -r 1 -i 1 -a 5 -n 1 -m 0.01 -s 1 -b 0 -p 0 -o 0 -u) -r 1 -d (ConceptDriftStream -s (moa.streams.generators.ImbalancedGenerator -r 2 -i 2 -a 5 -n 1 -m 0.01 -s 1 -b 0 -p 0 -o 0 -u) -r 2  -d (ConceptDriftStream -s (moa.streams.generators.ImbalancedGenerator -r 3 -i 3 -a 5 -n 1 -m 0.01 -s 1 -b 0 -p 0 -o 0 -u) -r 3  -d (ConceptDriftStream -s (moa.streams.generators.ImbalancedGenerator -r 4 -i 4 -a 5 -n 1 -m 0.01 -s 1 -b 0 -p 0 -o 0 -u) -r 4  -d (moa.streams.generators.ImbalancedGenerator -r 5 -i 5 -a 5 -n 1 -m 0.01 -s 1 -b 0 -p 0 -o 0 -u) -r 5  -p 10000 -w 1) -p 10000 -w 1)  -p 10000 -w 1)  -p 10000 -w 1) -f EMRIL\brz50K_static01move_abrupt.arff -m 50000
+
+
+/***************************/
+Static IR + Merging Clusters
+/**************************/
+WriteStreamToARFFFile -s (ConceptDriftStream -s (moa.streams.generators.ImbalancedGenerator -r 1 -i 1 -a 5 -n 5 -m 0.10 -s 1 -b 0 -p 0 -o 0 -u) -r 1 -d (moa.streams.generators.ImbalancedGenerator -r 2 -i 2 -a 5 -n 1 -m 0.10 -s 1 -b 0 -p 0 -o 0 -u) -p 20000 -w 10000) -f EMRIL\brz50K_static10merge_gradual.arff -m 50000
+
+WriteStreamToARFFFile -s (ConceptDriftStream -s (moa.streams.generators.ImbalancedGenerator -r 1 -i 1 -a 5 -n 5 -m 0.05 -s 1 -b 0 -p 0 -o 0 -u) -r 1 -d (moa.streams.generators.ImbalancedGenerator -r 2 -i 2 -a 5 -n 1 -m 0.05 -s 1 -b 0 -p 0 -o 0 -u) -p 20000 -w 10000) -f EMRIL\brz50K_static05merge_gradual.arff -m 50000
+
+WriteStreamToARFFFile -s (ConceptDriftStream -s (moa.streams.generators.ImbalancedGenerator -r 1 -i 1 -a 5 -n 5 -m 0.03 -s 1 -b 0 -p 0 -o 0 -u) -r 1 -d (moa.streams.generators.ImbalancedGenerator -r 2 -i 2 -a 5 -n 1 -m 0.03 -s 1 -b 0 -p 0 -o 0 -u) -p 20000 -w 10000) -f EMRIL\brz50K_static03merge_gradual.arff -m 50000
+
+WriteStreamToARFFFile -s (ConceptDriftStream -s (moa.streams.generators.ImbalancedGenerator -r 1 -i 1 -a 5 -n 5 -m 0.01 -s 1 -b 0 -p 0 -o 0 -u) -r 1 -d (moa.streams.generators.ImbalancedGenerator -r 2 -i 2 -a 5 -n 1 -m 0.01 -s 1 -b 0 -p 0 -o 0 -u) -p 20000 -w 10000) -f EMRIL\brz50K_static01merge_gradual.arff -m 50000
+
+WriteStreamToARFFFile -s (ConceptDriftStream -s (moa.streams.generators.ImbalancedGenerator -r 1 -i 1 -a 5 -n 5 -m 0.10 -s 1 -b 0 -p 0 -o 0 -u) -r 1 -d (moa.streams.generators.ImbalancedGenerator -r 2 -i 2 -a 5 -n 1 -m 0.10 -s 1 -b 0 -p 0 -o 0 -u) -p 20000 -w 1) -f EMRIL\brz50K_static10merge_abrupt.arff -m 50000
+
+WriteStreamToARFFFile -s (ConceptDriftStream -s (moa.streams.generators.ImbalancedGenerator -r 1 -i 1 -a 5 -n 5 -m 0.05 -s 1 -b 0 -p 0 -o 0 -u) -r 1 -d (moa.streams.generators.ImbalancedGenerator -r 2 -i 2 -a 5 -n 1 -m 0.05 -s 1 -b 0 -p 0 -o 0 -u) -p 20000 -w 1) -f EMRIL\brz50K_static05merge_abrupt.arff -m 50000
+
+WriteStreamToARFFFile -s (ConceptDriftStream -s (moa.streams.generators.ImbalancedGenerator -r 1 -i 1 -a 5 -n 5 -m 0.03 -s 1 -b 0 -p 0 -o 0 -u) -r 1 -d (moa.streams.generators.ImbalancedGenerator -r 2 -i 2 -a 5 -n 1 -m 0.03 -s 1 -b 0 -p 0 -o 0 -u) -p 20000 -w 1) -f EMRIL\brz50K_static03merge_abrupt.arff -m 50000
+
+WriteStreamToARFFFile -s (ConceptDriftStream -s (moa.streams.generators.ImbalancedGenerator -r 1 -i 1 -a 5 -n 5 -m 0.01 -s 1 -b 0 -p 0 -o 0 -u) -r 1 -d (moa.streams.generators.ImbalancedGenerator -r 2 -i 2 -a 5 -n 1 -m 0.01 -s 1 -b 0 -p 0 -o 0 -u) -p 20000 -w 1) -f EMRIL\brz50K_static01merge_abrupt.arff -m 50000
+
+/*****************************/
+Static IR + Splitting Clusters
+/*****************************/
+WriteStreamToARFFFile -s (ConceptDriftStream -s (moa.streams.generators.ImbalancedGenerator -r 1 -i 1 -a 5 -n 1 -m 0.10 -s 1 -b 0 -p 0 -o 0 -u) -r 1  -d (moa.streams.generators.ImbalancedGenerator -r 2 -i 2 -a 5 -n 5 -m 0.10 -s 1 -b 0 -p 0 -o 0 -u)  -p 20000 -w 10000) -f EMRIL\brz50K_static10split_gradual.arff -m 50000
+
+WriteStreamToARFFFile -s (ConceptDriftStream -s (moa.streams.generators.ImbalancedGenerator -r 1 -i 1 -a 5 -n 1 -m 0.05 -s 1 -b 0 -p 0 -o 0 -u) -r 1  -d (moa.streams.generators.ImbalancedGenerator -r 2 -i 2 -a 5 -n 5 -m 0.05 -s 1 -b 0 -p 0 -o 0 -u)  -p 20000 -w 10000) -f EMRIL\brz50K_static05split_gradual.arff -m 50000
+
+WriteStreamToARFFFile -s (ConceptDriftStream -s (moa.streams.generators.ImbalancedGenerator -r 1 -i 1 -a 5 -n 1 -m 0.03 -s 1 -b 0 -p 0 -o 0 -u) -r 1  -d (moa.streams.generators.ImbalancedGenerator -r 2 -i 2 -a 5 -n 5 -m 0.03 -s 1 -b 0 -p 0 -o 0 -u)  -p 20000 -w 10000) -f EMRIL\brz50K_static03split_gradual.arff -m 50000
+
+WriteStreamToARFFFile -s (ConceptDriftStream -s (moa.streams.generators.ImbalancedGenerator -r 1 -i 1 -a 5 -n 1 -m 0.01 -s 1 -b 0 -p 0 -o 0 -u) -r 1  -d (moa.streams.generators.ImbalancedGenerator -r 2 -i 2 -a 5 -n 5 -m 0.01 -s 1 -b 0 -p 0 -o 0 -u)  -p 20000 -w 10000) -f EMRIL\brz50K_static01split_gradual.arff -m 50000
+
+WriteStreamToARFFFile -s (ConceptDriftStream -s (moa.streams.generators.ImbalancedGenerator -r 1 -i 1 -a 5 -n 1 -m 0.10 -s 1 -b 0 -p 0 -o 0 -u) -r 1  -d (moa.streams.generators.ImbalancedGenerator -r 2 -i 2 -a 5 -n 5 -m 0.10 -s 1 -b 0 -p 0 -o 0 -u)  -p 20000 -w 1) -f EMRIL\brz50K_static10split_abrupt.arff -m 50000
+
+WriteStreamToARFFFile -s (ConceptDriftStream -s (moa.streams.generators.ImbalancedGenerator -r 1 -i 1 -a 5 -n 1 -m 0.05 -s 1 -b 0 -p 0 -o 0 -u) -r 1  -d (moa.streams.generators.ImbalancedGenerator -r 2 -i 2 -a 5 -n 5 -m 0.05 -s 1 -b 0 -p 0 -o 0 -u)  -p 20000 -w 1) -f EMRIL\brz50K_static05split_abrupt.arff -m 50000
+
+WriteStreamToARFFFile -s (ConceptDriftStream -s (moa.streams.generators.ImbalancedGenerator -r 1 -i 1 -a 5 -n 1 -m 0.03 -s 1 -b 0 -p 0 -o 0 -u) -r 1  -d (moa.streams.generators.ImbalancedGenerator -r 2 -i 2 -a 5 -n 5 -m 0.03 -s 1 -b 0 -p 0 -o 0 -u)  -p 20000 -w 1) -f EMRIL\brz50K_static03split_abrupt.arff -m 50000
+
+WriteStreamToARFFFile -s (ConceptDriftStream -s (moa.streams.generators.ImbalancedGenerator -r 1 -i 1 -a 5 -n 1 -m 0.01 -s 1 -b 0 -p 0 -o 0 -u) -r 1  -d (moa.streams.generators.ImbalancedGenerator -r 2 -i 2 -a 5 -n 5 -m 0.01 -s 1 -b 0 -p 0 -o 0 -u)  -p 20000 -w 1) -f EMRIL\brz50K_static01split_abrupt.arff -m 50000
+
+/*********************/
+Static IR + Borderline
+/*********************/
+
+WriteStreamToARFFFile -s (moa.streams.generators.ImbalancedGenerator -r 1 -i 1 -a 5 -n 1 -m 0.10 -s 0.4 -b 0.6 -p 0 -o 0 -u) -f EMRIL\brz50K_static10border06.arff -m 50000
+
+WriteStreamToARFFFile -s (moa.streams.generators.ImbalancedGenerator -r 1 -i 1 -a 5 -n 1 -m 0.05 -s 0.4 -b 0.6 -p 0 -o 0 -u) -f EMRIL\brz50K_static05border06.arff -m 50000
+
+WriteStreamToARFFFile -s (moa.streams.generators.ImbalancedGenerator -r 1 -i 1 -a 5 -n 1 -m 0.03 -s 0.4 -b 0.6 -p 0 -o 0 -u) -f EMRIL\brz50K_static03border06.arff -m 50000
+
+WriteStreamToARFFFile -s (moa.streams.generators.ImbalancedGenerator -r 1 -i 1 -a 5 -n 1 -m 0.01 -s 0.4 -b 0.6 -p 0 -o 0 -u) -f EMRIL\brz50K_static01border06.arff -m 50000
+
+WriteStreamToARFFFile -s (moa.streams.generators.ImbalancedGenerator -r 1 -i 1 -a 5 -n 1 -m 0.10 -s 0.2 -b 0.8 -p 0 -o 0 -u) -f EMRIL\brz50K_static10border08.arff -m 50000
+
+WriteStreamToARFFFile -s (moa.streams.generators.ImbalancedGenerator -r 1 -i 1 -a 5 -n 1 -m 0.05 -s 0.2 -b 0.8 -p 0 -o 0 -u) -f EMRIL\brz50K_static05border08.arff -m 50000
+
+WriteStreamToARFFFile -s (moa.streams.generators.ImbalancedGenerator -r 1 -i 1 -a 5 -n 1 -m 0.03 -s 0.2 -b 0.8 -p 0 -o 0 -u) -f EMRIL\brz50K_static03border08.arff -m 50000
+
+WriteStreamToARFFFile -s (moa.streams.generators.ImbalancedGenerator -r 1 -i 1 -a 5 -n 1 -m 0.01 -s 0.2 -b 0.8 -p 0 -o 0 -u) -f EMRIL\brz50K_static01border08.arff -m 50000
+
+
+
+
+/*********************/
+Static IR + Rare
+/*********************/
+WriteStreamToARFFFile -s (moa.streams.generators.ImbalancedGenerator -r 1 -i 1 -a 5 -n 1 -m 0.10 -s 0.4 -b 0 -p 0.6 -o 0 -u) -f EMRIL\brz50K_static10rare06.arff -m 50000
+
+WriteStreamToARFFFile -s (moa.streams.generators.ImbalancedGenerator -r 1 -i 1 -a 5 -n 1 -m 0.05 -s 0.4 -b 0 -p 0.6 -o 0 -u) -f EMRIL\brz50K_static05rare06.arff -m 50000
+
+WriteStreamToARFFFile -s (moa.streams.generators.ImbalancedGenerator -r 1 -i 1 -a 5 -n 1 -m 0.03 -s 0.4 -b 0 -p 0.6 -o 0 -u) -f EMRIL\brz50K_static03rare06.arff -m 50000
+
+WriteStreamToARFFFile -s (moa.streams.generators.ImbalancedGenerator -r 1 -i 1 -a 5 -n 1 -m 0.01 -s 0.4 -b 0 -p 0.6 -o 0 -u) -f EMRIL\brz50K_static01rare06.arff -m 50000
+
+
+WriteStreamToARFFFile -s (moa.streams.generators.ImbalancedGenerator -r 1 -i 1 -a 5 -n 1 -m 0.10 -s 0.2 -b 0 -p 0.8 -o 0 -u) -f EMRIL\brz50K_static10rare08.arff -m 50000
+
+WriteStreamToARFFFile -s (moa.streams.generators.ImbalancedGenerator -r 1 -i 1 -a 5 -n 1 -m 0.05 -s 0.2 -b 0 -p 0.8 -o 0 -u) -f EMRIL\brz50K_static05rare08.arff -m 50000
+
+WriteStreamToARFFFile -s (moa.streams.generators.ImbalancedGenerator -r 1 -i 1 -a 5 -n 1 -m 0.03 -s 0.2 -b 0 -p 0.8 -o 0 -u) -f EMRIL\brz50K_static03rare08.arff -m 50000
+
+WriteStreamToARFFFile -s (moa.streams.generators.ImbalancedGenerator -r 1 -i 1 -a 5 -n 1 -m 0.01 -s 0.2 -b 0 -p 0.8 -o 0 -u) -f EMRIL\brz50K_static01rare08.arff -m 50000
+
+
+
+/*********************/
+Drifts + Static IR
+/*********************/
+
+
+
+
+WriteStreamToARFFFile -s (ConceptDriftStream -s (moa.streams.generators.imbalanced.BinaryImbalancedGenerator -s 1 -i 0.01 -g (moa.streams.generators.SEAGenerator -i 1 -f 1)) -r 1 -d (ConceptDriftStream -s (moa.streams.generators.imbalanced.BinaryImbalancedGenerator -s 2 -i 0.01 -g (moa.streams.generators.SEAGenerator -i 2 -f 2)) -r 2 -d (ConceptDriftStream -s (moa.streams.generators.imbalanced.BinaryImbalancedGenerator -s 3 -i 0.01 -g (moa.streams.generators.SEAGenerator -i 3 -f 3)) -r 3 -d (ConceptDriftStream -s (moa.streams.generators.imbalanced.BinaryImbalancedGenerator -s 4 -i 0.01 -g (moa.streams.generators.SEAGenerator -i 4 -f 4)) -r 4 -d (moa.streams.generators.imbalanced.BinaryImbalancedGenerator -s 5 -i 0.01 -g (moa.streams.generators.SEAGenerator -i 5 -f 1)) -r 5 -p 10000 -w 1) -p 10000 -w 1) -p 10000 -w 1) -p 10000 -w 1) -f EMRIL\sea50K_Static01Abr.arff -m 50000
+
+WriteStreamToARFFFile -s (ConceptDriftStream -s (moa.streams.generators.imbalanced.BinaryImbalancedGenerator -s 1 -i 0.03 -g (moa.streams.generators.SEAGenerator -i 1 -f 1)) -r 1 -d (ConceptDriftStream -s (moa.streams.generators.imbalanced.BinaryImbalancedGenerator -s 2 -i 0.03 -g (moa.streams.generators.SEAGenerator -i 2 -f 2)) -r 2 -d (ConceptDriftStream -s (moa.streams.generators.imbalanced.BinaryImbalancedGenerator -s 3 -i 0.03 -g (moa.streams.generators.SEAGenerator -i 3 -f 3)) -r 3 -d (ConceptDriftStream -s (moa.streams.generators.imbalanced.BinaryImbalancedGenerator -s 4 -i 0.03 -g (moa.streams.generators.SEAGenerator -i 4 -f 4)) -r 4 -d (moa.streams.generators.imbalanced.BinaryImbalancedGenerator -s 5 -i 0.03 -g (moa.streams.generators.SEAGenerator -i 5 -f 1)) -r 5 -p 10000 -w 1) -p 10000 -w 1) -p 10000 -w 1) -p 10000 -w 1) -f EMRIL\sea50K_Static03Abr.arff -m 50000
+
+WriteStreamToARFFFile -s (ConceptDriftStream -s (moa.streams.generators.imbalanced.BinaryImbalancedGenerator -s 1 -i 0.05 -g (moa.streams.generators.SEAGenerator -i 1 -f 1)) -r 1 -d (ConceptDriftStream -s (moa.streams.generators.imbalanced.BinaryImbalancedGenerator -s 2 -i 0.05 -g (moa.streams.generators.SEAGenerator -i 2 -f 2)) -r 2 -d (ConceptDriftStream -s (moa.streams.generators.imbalanced.BinaryImbalancedGenerator -s 3 -i 0.05 -g (moa.streams.generators.SEAGenerator -i 3 -f 3)) -r 3 -d (ConceptDriftStream -s (moa.streams.generators.imbalanced.BinaryImbalancedGenerator -s 4 -i 0.05 -g (moa.streams.generators.SEAGenerator -i 4 -f 4)) -r 4 -d (moa.streams.generators.imbalanced.BinaryImbalancedGenerator -s 5 -i 0.05 -g (moa.streams.generators.SEAGenerator -i 5 -f 1)) -r 5 -p 10000 -w 1) -p 10000 -w 1) -p 10000 -w 1) -p 10000 -w 1) -f EMRIL\sea50K_Static05Abr.arff -m 50000
+
+
+WriteStreamToARFFFile -s (ConceptDriftStream -s (moa.streams.generators.imbalanced.BinaryImbalancedGenerator -s 1 -i 0.10 -g (moa.streams.generators.SEAGenerator -i 1 -f 1)) -r 1 -d (ConceptDriftStream -s (moa.streams.generators.imbalanced.BinaryImbalancedGenerator -s 2 -i 0.10 -g (moa.streams.generators.SEAGenerator -i 2 -f 2)) -r 2 -d (ConceptDriftStream -s (moa.streams.generators.imbalanced.BinaryImbalancedGenerator -s 3 -i 0.10 -g (moa.streams.generators.SEAGenerator -i 3 -f 3)) -r 3 -d (ConceptDriftStream -s (moa.streams.generators.imbalanced.BinaryImbalancedGenerator -s 4 -i 0.10 -g (moa.streams.generators.SEAGenerator -i 4 -f 4)) -r 4 -d (moa.streams.generators.imbalanced.BinaryImbalancedGenerator -s 5 -i 0.10 -g (moa.streams.generators.SEAGenerator -i 5 -f 1)) -r 5 -p 10000 -w 1) -p 10000 -w 1) -p 10000 -w 1) -p 10000 -w 1) -f EMRIL\sea50K_Static10Abr.arff -m 50000
+
+WriteStreamToARFFFile -s (ConceptDriftStream -s (moa.streams.generators.imbalanced.BinaryImbalancedGenerator -s 1 -i 0.01 -g (moa.streams.generators.SEAGenerator -i 1 -f 1)) -r 1 -d (ConceptDriftStream -s (moa.streams.generators.imbalanced.BinaryImbalancedGenerator -s 2 -i 0.01 -g (moa.streams.generators.SEAGenerator -i 2 -f 2)) -r 2 -d (ConceptDriftStream -s (moa.streams.generators.imbalanced.BinaryImbalancedGenerator -s 3 -i 0.01 -g (moa.streams.generators.SEAGenerator -i 3 -f 3)) -r 3 -d (ConceptDriftStream -s (moa.streams.generators.imbalanced.BinaryImbalancedGenerator -s 4 -i 0.01 -g (moa.streams.generators.SEAGenerator -i 4 -f 4)) -r 4 -d (moa.streams.generators.imbalanced.BinaryImbalancedGenerator -s 5 -i 0.01 -g (moa.streams.generators.SEAGenerator -i 5 -f 1)) -r 5 -p 10000 -w 5000) -p 10000 -w 5000) -p 10000 -w 5000) -p 10000 -w 5000) -f EMRIL\sea50K_Static01Grad.arff -m 50000
+
+WriteStreamToARFFFile -s (ConceptDriftStream -s (moa.streams.generators.imbalanced.BinaryImbalancedGenerator -s 1 -i 0.03 -g (moa.streams.generators.SEAGenerator -i 1 -f 1)) -r 1 -d (ConceptDriftStream -s (moa.streams.generators.imbalanced.BinaryImbalancedGenerator -s 2 -i 0.03 -g (moa.streams.generators.SEAGenerator -i 2 -f 2)) -r 2 -d (ConceptDriftStream -s (moa.streams.generators.imbalanced.BinaryImbalancedGenerator -s 3 -i 0.03 -g (moa.streams.generators.SEAGenerator -i 3 -f 3)) -r 3 -d (ConceptDriftStream -s (moa.streams.generators.imbalanced.BinaryImbalancedGenerator -s 4 -i 0.03 -g (moa.streams.generators.SEAGenerator -i 4 -f 4)) -r 4 -d (moa.streams.generators.imbalanced.BinaryImbalancedGenerator -s 5 -i 0.03 -g (moa.streams.generators.SEAGenerator -i 5 -f 1)) -r 5 -p 10000 -w 5000) -p 10000 -w 5000) -p 10000 -w 5000) -p 10000 -w 5000) -f EMRIL\sea50K_Static03Grad.arff -m 50000
+
+WriteStreamToARFFFile -s (ConceptDriftStream -s (moa.streams.generators.imbalanced.BinaryImbalancedGenerator -s 1 -i 0.05 -g (moa.streams.generators.SEAGenerator -i 1 -f 1)) -r 1 -d (ConceptDriftStream -s (moa.streams.generators.imbalanced.BinaryImbalancedGenerator -s 2 -i 0.05 -g (moa.streams.generators.SEAGenerator -i 2 -f 2)) -r 2 -d (ConceptDriftStream -s (moa.streams.generators.imbalanced.BinaryImbalancedGenerator -s 3 -i 0.05 -g (moa.streams.generators.SEAGenerator -i 3 -f 3)) -r 3 -d (ConceptDriftStream -s (moa.streams.generators.imbalanced.BinaryImbalancedGenerator -s 4 -i 0.05 -g (moa.streams.generators.SEAGenerator -i 4 -f 4)) -r 4 -d (moa.streams.generators.imbalanced.BinaryImbalancedGenerator -s 5 -i 0.05 -g (moa.streams.generators.SEAGenerator -i 5 -f 1)) -r 5 -p 10000 -w 5000) -p 10000 -w 5000) -p 10000 -w 5000) -p 10000 -w 5000) -f EMRIL\sea50K_Static05Grad.arff -m 50000
+
+WriteStreamToARFFFile -s (ConceptDriftStream -s (moa.streams.generators.imbalanced.BinaryImbalancedGenerator -s 1 -i 0.10 -g (moa.streams.generators.SEAGenerator -i 1 -f 1)) -r 1 -d (ConceptDriftStream -s (moa.streams.generators.imbalanced.BinaryImbalancedGenerator -s 2 -i 0.10 -g (moa.streams.generators.SEAGenerator -i 2 -f 2)) -r 2 -d (ConceptDriftStream -s (moa.streams.generators.imbalanced.BinaryImbalancedGenerator -s 3 -i 0.10 -g (moa.streams.generators.SEAGenerator -i 3 -f 3)) -r 3 -d (ConceptDriftStream -s (moa.streams.generators.imbalanced.BinaryImbalancedGenerator -s 4 -i 0.10 -g (moa.streams.generators.SEAGenerator -i 4 -f 4)) -r 4 -d (moa.streams.generators.imbalanced.BinaryImbalancedGenerator -s 5 -i 0.10 -g (moa.streams.generators.SEAGenerator -i 5 -f 1)) -r 5 -p 10000 -w 5000) -p 10000 -w 5000) -p 10000 -w 5000) -p 10000 -w 5000) -f EMRIL\sea50K_Static10Grad.arff -m 50000
+
+--
+WriteStreamToARFFFile -s (ConceptDriftStream -s (moa.streams.generators.imbalanced.BinaryImbalancedGenerator -s 1 -i 0.01 -g (moa.streams.generators.SineGenerator -i 1 -f 1)) -r 1 -d (ConceptDriftStream -s (moa.streams.generators.imbalanced.BinaryImbalancedGenerator -s 2 -i 0.01 -g (moa.streams.generators.SineGenerator -i 2 -f 2)) -r 2 -d (ConceptDriftStream -s (moa.streams.generators.imbalanced.BinaryImbalancedGenerator -s 3 -i 0.01 -g (moa.streams.generators.SineGenerator -i 3 -f 3)) -r 3 -d (ConceptDriftStream -s (moa.streams.generators.imbalanced.BinaryImbalancedGenerator -s 4 -i 0.01 -g (moa.streams.generators.SineGenerator -i 4 -f 4)) -r 4 -d (moa.streams.generators.imbalanced.BinaryImbalancedGenerator -s 5 -i 0.01 -g (moa.streams.generators.SineGenerator -i 5 -f 1)) -r 5 -p 10000 -w 1) -p 10000 -w 1) -p 10000 -w 1) -p 10000 -w 1) -f EMRIL\sine50K_Static01Abr.arff -m 50000
+
+WriteStreamToARFFFile -s (ConceptDriftStream -s (moa.streams.generators.imbalanced.BinaryImbalancedGenerator -s 1 -i 0.03 -g (moa.streams.generators.SineGenerator -i 1 -f 1)) -r 1 -d (ConceptDriftStream -s (moa.streams.generators.imbalanced.BinaryImbalancedGenerator -s 2 -i 0.03 -g (moa.streams.generators.SineGenerator -i 2 -f 2)) -r 2 -d (ConceptDriftStream -s (moa.streams.generators.imbalanced.BinaryImbalancedGenerator -s 3 -i 0.03 -g (moa.streams.generators.SineGenerator -i 3 -f 3)) -r 3 -d (ConceptDriftStream -s (moa.streams.generators.imbalanced.BinaryImbalancedGenerator -s 4 -i 0.03 -g (moa.streams.generators.SineGenerator -i 4 -f 4)) -r 4 -d (moa.streams.generators.imbalanced.BinaryImbalancedGenerator -s 5 -i 0.03 -g (moa.streams.generators.SineGenerator -i 5 -f 1)) -r 5 -p 10000 -w 1) -p 10000 -w 1) -p 10000 -w 1) -p 10000 -w 1) -f EMRIL\sine50K_Static03Abr.arff -m 50000
+
+WriteStreamToARFFFile -s (ConceptDriftStream -s (moa.streams.generators.imbalanced.BinaryImbalancedGenerator -s 1 -i 0.05 -g (moa.streams.generators.SineGenerator -i 1 -f 1)) -r 1 -d (ConceptDriftStream -s (moa.streams.generators.imbalanced.BinaryImbalancedGenerator -s 2 -i 0.05 -g (moa.streams.generators.SineGenerator -i 2 -f 2)) -r 2 -d (ConceptDriftStream -s (moa.streams.generators.imbalanced.BinaryImbalancedGenerator -s 3 -i 0.05 -g (moa.streams.generators.SineGenerator -i 3 -f 3)) -r 3 -d (ConceptDriftStream -s (moa.streams.generators.imbalanced.BinaryImbalancedGenerator -s 4 -i 0.05 -g (moa.streams.generators.SineGenerator -i 4 -f 4)) -r 4 -d (moa.streams.generators.imbalanced.BinaryImbalancedGenerator -s 5 -i 0.05 -g (moa.streams.generators.SineGenerator -i 5 -f 1)) -r 5 -p 10000 -w 1) -p 10000 -w 1) -p 10000 -w 1) -p 10000 -w 1) -f EMRIL\sine50K_Static05Abr.arff -m 50000
+
+
+WriteStreamToARFFFile -s (ConceptDriftStream -s (moa.streams.generators.imbalanced.BinaryImbalancedGenerator -s 1 -i 0.10 -g (moa.streams.generators.SineGenerator -i 1 -f 1)) -r 1 -d (ConceptDriftStream -s (moa.streams.generators.imbalanced.BinaryImbalancedGenerator -s 2 -i 0.10 -g (moa.streams.generators.SineGenerator -i 2 -f 2)) -r 2 -d (ConceptDriftStream -s (moa.streams.generators.imbalanced.BinaryImbalancedGenerator -s 3 -i 0.10 -g (moa.streams.generators.SineGenerator -i 3 -f 3)) -r 3 -d (ConceptDriftStream -s (moa.streams.generators.imbalanced.BinaryImbalancedGenerator -s 4 -i 0.10 -g (moa.streams.generators.SineGenerator -i 4 -f 4)) -r 4 -d (moa.streams.generators.imbalanced.BinaryImbalancedGenerator -s 5 -i 0.10 -g (moa.streams.generators.SineGenerator -i 5 -f 1)) -r 5 -p 10000 -w 1) -p 10000 -w 1) -p 10000 -w 1) -p 10000 -w 1) -f EMRIL\sine50K_Static10Abr.arff -m 50000
+
+
+WriteStreamToARFFFile -s (ConceptDriftStream -s (moa.streams.generators.imbalanced.BinaryImbalancedGenerator -s 1 -i 0.01 -g (moa.streams.generators.SineGenerator -i 1 -f 1)) -r 1 -d (ConceptDriftStream -s (moa.streams.generators.imbalanced.BinaryImbalancedGenerator -s 2 -i 0.01 -g (moa.streams.generators.SineGenerator -i 2 -f 2)) -r 2 -d (ConceptDriftStream -s (moa.streams.generators.imbalanced.BinaryImbalancedGenerator -s 3 -i 0.01 -g (moa.streams.generators.SineGenerator -i 3 -f 3)) -r 3 -d (ConceptDriftStream -s (moa.streams.generators.imbalanced.BinaryImbalancedGenerator -s 4 -i 0.01 -g (moa.streams.generators.SineGenerator -i 4 -f 4)) -r 4 -d (moa.streams.generators.imbalanced.BinaryImbalancedGenerator -s 5 -i 0.01 -g (moa.streams.generators.SineGenerator -i 5 -f 1)) -r 5 -p 10000 -w 5000) -p 10000 -w 5000) -p 10000 -w 5000) -p 10000 -w 5000) -f EMRIL\sine50K_Static01Grad.arff -m 50000
+
+WriteStreamToARFFFile -s (ConceptDriftStream -s (moa.streams.generators.imbalanced.BinaryImbalancedGenerator -s 1 -i 0.03 -g (moa.streams.generators.SineGenerator -i 1 -f 1)) -r 1 -d (ConceptDriftStream -s (moa.streams.generators.imbalanced.BinaryImbalancedGenerator -s 2 -i 0.03 -g (moa.streams.generators.SineGenerator -i 2 -f 2)) -r 2 -d (ConceptDriftStream -s (moa.streams.generators.imbalanced.BinaryImbalancedGenerator -s 3 -i 0.03 -g (moa.streams.generators.SineGenerator -i 3 -f 3)) -r 3 -d (ConceptDriftStream -s (moa.streams.generators.imbalanced.BinaryImbalancedGenerator -s 4 -i 0.03 -g (moa.streams.generators.SineGenerator -i 4 -f 4)) -r 4 -d (moa.streams.generators.imbalanced.BinaryImbalancedGenerator -s 5 -i 0.03 -g (moa.streams.generators.SineGenerator -i 5 -f 1)) -r 5 -p 10000 -w 5000) -p 10000 -w 5000) -p 10000 -w 5000) -p 10000 -w 5000) -f EMRIL\sine50K_Static03Grad.arff -m 50000
+
+WriteStreamToARFFFile -s (ConceptDriftStream -s (moa.streams.generators.imbalanced.BinaryImbalancedGenerator -s 1 -i 0.05 -g (moa.streams.generators.SineGenerator -i 1 -f 1)) -r 1 -d (ConceptDriftStream -s (moa.streams.generators.imbalanced.BinaryImbalancedGenerator -s 2 -i 0.05 -g (moa.streams.generators.SineGenerator -i 2 -f 2)) -r 2 -d (ConceptDriftStream -s (moa.streams.generators.imbalanced.BinaryImbalancedGenerator -s 3 -i 0.05 -g (moa.streams.generators.SineGenerator -i 3 -f 3)) -r 3 -d (ConceptDriftStream -s (moa.streams.generators.imbalanced.BinaryImbalancedGenerator -s 4 -i 0.05 -g (moa.streams.generators.SineGenerator -i 4 -f 4)) -r 4 -d (moa.streams.generators.imbalanced.BinaryImbalancedGenerator -s 5 -i 0.05 -g (moa.streams.generators.SineGenerator -i 5 -f 1)) -r 5 -p 10000 -w 5000) -p 10000 -w 5000) -p 10000 -w 5000) -p 10000 -w 5000) -f EMRIL\sine50K_Static05Grad.arff -m 50000
+
+WriteStreamToARFFFile -s (ConceptDriftStream -s (moa.streams.generators.imbalanced.BinaryImbalancedGenerator -s 1 -i 0.10 -g (moa.streams.generators.SineGenerator -i 1 -f 1)) -r 1 -d (ConceptDriftStream -s (moa.streams.generators.imbalanced.BinaryImbalancedGenerator -s 2 -i 0.10 -g (moa.streams.generators.SineGenerator -i 2 -f 2)) -r 2 -d (ConceptDriftStream -s (moa.streams.generators.imbalanced.BinaryImbalancedGenerator -s 3 -i 0.10 -g (moa.streams.generators.SineGenerator -i 3 -f 3)) -r 3 -d (ConceptDriftStream -s (moa.streams.generators.imbalanced.BinaryImbalancedGenerator -s 4 -i 0.10 -g (moa.streams.generators.SineGenerator -i 4 -f 4)) -r 4 -d (moa.streams.generators.imbalanced.BinaryImbalancedGenerator -s 5 -i 0.10 -g (moa.streams.generators.SineGenerator -i 5 -f 1)) -r 5 -p 10000 -w 5000) -p 10000 -w 5000) -p 10000 -w 5000) -p 10000 -w 5000) -f EMRIL\sine50K_Static10Grad.arff -m 50000
+
+----
+WriteStreamToARFFFile -s (ConceptDriftStream -s (generators.imbalanced.BinaryImbalancedGenerator -i 0.01 -g generators.MixedGenerator) -d (ConceptDriftStream -s (generators.imbalanced.BinaryImbalancedGenerator -s 2 -i 0.01 -g (generators.MixedGenerator -f 2)) -d (generators.imbalanced.BinaryImbalancedGenerator -i 0.01 -g generators.MixedGenerator) -p 15000 -w 10000 -r 2) -p 15000 -w 10000) -f EMRIL\mixed50K_Static01Grad.arff -m 50000
+
+WriteStreamToARFFFile -s (ConceptDriftStream -s (generators.imbalanced.BinaryImbalancedGenerator -i 0.03 -g generators.MixedGenerator) -d (ConceptDriftStream -s (generators.imbalanced.BinaryImbalancedGenerator -s 2 -i 0.03 -g (generators.MixedGenerator -f 2)) -d (generators.imbalanced.BinaryImbalancedGenerator -i 0.03 -g generators.MixedGenerator) -p 15000 -w 10000 -r 2) -p 15000 -w 10000) -f EMRIL\mixed50K_Static03Grad.arff -m 50000
+
+WriteStreamToARFFFile -s (ConceptDriftStream -s (generators.imbalanced.BinaryImbalancedGenerator -i 0.05 -g generators.MixedGenerator) -d (ConceptDriftStream -s (generators.imbalanced.BinaryImbalancedGenerator -s 2 -i 0.05 -g (generators.MixedGenerator -f 2)) -d (generators.imbalanced.BinaryImbalancedGenerator -i 0.05 -g generators.MixedGenerator) -p 15000 -w 10000 -r 2) -p 15000 -w 10000) -f EMRIL\mixed50K_Static05Grad.arff -m 50000
+
+WriteStreamToARFFFile -s (ConceptDriftStream -s (generators.imbalanced.BinaryImbalancedGenerator -i 0.10 -g generators.MixedGenerator) -d (ConceptDriftStream -s (generators.imbalanced.BinaryImbalancedGenerator -s 2 -i 0.10 -g (generators.MixedGenerator -f 2)) -d (generators.imbalanced.BinaryImbalancedGenerator -i 0.10 -g generators.MixedGenerator) -p 15000 -w 10000 -r 2) -p 15000 -w 10000) -f EMRIL\streams-drifts-irs\mixed50K_Static10Grad.arff -m 50000
+
+WriteStreamToARFFFile -s (ConceptDriftStream -s (generators.imbalanced.BinaryImbalancedGenerator -i 0.01 -g generators.MixedGenerator) -d (ConceptDriftStream -s (generators.imbalanced.BinaryImbalancedGenerator -s 2 -i 0.01 -g (generators.MixedGenerator -f 2)) -d (generators.imbalanced.BinaryImbalancedGenerator -i 0.01 -g generators.MixedGenerator) -p 15000 -w 1 -r 2) -p 15000 -w 1) -f EMRIL\mixed50K_Static01Abr.arff -m 50000
+
+WriteStreamToARFFFile -s (ConceptDriftStream -s (generators.imbalanced.BinaryImbalancedGenerator -i 0.03 -g generators.MixedGenerator) -d (ConceptDriftStream -s (generators.imbalanced.BinaryImbalancedGenerator -s 2 -i 0.03 -g (generators.MixedGenerator -f 2)) -d (generators.imbalanced.BinaryImbalancedGenerator -i 0.03 -g generators.MixedGenerator) -p 15000 -w 1 -r 2) -p 15000 -w 1) -f EMRIL\mixed50K_Static03Abr.arff -m 50000
+
+WriteStreamToARFFFile -s (ConceptDriftStream -s (generators.imbalanced.BinaryImbalancedGenerator -i 0.05 -g generators.MixedGenerator) -d (ConceptDriftStream -s (generators.imbalanced.BinaryImbalancedGenerator -s 2 -i 0.05 -g (generators.MixedGenerator -f 2)) -d (generators.imbalanced.BinaryImbalancedGenerator -i 0.05 -g generators.MixedGenerator) -p 15000 -w 1 -r 2) -p 15000 -w 1) -f EMRIL\mixed50K_Static05Abr.arff -m 50000
+
+WriteStreamToARFFFile -s (ConceptDriftStream -s (generators.imbalanced.BinaryImbalancedGenerator -i 0.10 -g generators.MixedGenerator) -d (ConceptDriftStream -s (generators.imbalanced.BinaryImbalancedGenerator -s 2 -i 0.10 -g (generators.MixedGenerator -f 2)) -d (generators.imbalanced.BinaryImbalancedGenerator -i 0.10 -g generators.MixedGenerator) -p 15000 -w 1 -r 2) -p 15000 -w 1) -f EMRIL\mixed50K_Static10Abr.arff -m 50000
+
+
+
+/*********************/
+Inc IR + Drifts
+/*********************/
+WriteStreamToARFFFile -s (ConceptDriftStream -s (moa.streams.generators.imbalanced.BinaryImbalancedGenerator -s 1 -i 0.05 -g (moa.streams.generators.SineGenerator -i 1 -f 1)) -r 1 -d (ConceptDriftStream -s (moa.streams.generators.imbalanced.BinaryImbalancedGenerator -s 2 -i 0.04 -g (moa.streams.generators.SineGenerator -i 2 -f 2)) -r 2 -d (ConceptDriftStream -s (moa.streams.generators.imbalanced.BinaryImbalancedGenerator -s 3 -i 0.03 -g (moa.streams.generators.SineGenerator -i 3 -f 3)) -r 3 -d (ConceptDriftStream -s (moa.streams.generators.imbalanced.BinaryImbalancedGenerator -s 4 -i 0.02 -g (moa.streams.generators.SineGenerator -i 4 -f 4)) -r 4 -d (moa.streams.generators.imbalanced.BinaryImbalancedGenerator -s 5 -i 0.01 -g (moa.streams.generators.SineGenerator -i 5 -f 1)) -r 5 -p 10000 -w 5000) -p 10000 -w 5000) -p 10000 -w 5000) -p 10000 -w 5000) -f EMRIL\sine50K_Inc5To1Grad.arff -m 50000
+
+WriteStreamToARFFFile -s (ConceptDriftStream -s (moa.streams.generators.imbalanced.BinaryImbalancedGenerator -s 1 -i 0.05 -g (moa.streams.generators.SineGenerator -i 1 -f 1)) -r 1 -d (ConceptDriftStream -s (moa.streams.generators.imbalanced.BinaryImbalancedGenerator -s 2 -i 0.04 -g (moa.streams.generators.SineGenerator -i 2 -f 2)) -r 2 -d (ConceptDriftStream -s (moa.streams.generators.imbalanced.BinaryImbalancedGenerator -s 3 -i 0.03 -g (moa.streams.generators.SineGenerator -i 3 -f 3)) -r 3 -d (ConceptDriftStream -s (moa.streams.generators.imbalanced.BinaryImbalancedGenerator -s 4 -i 0.02 -g (moa.streams.generators.SineGenerator -i 4 -f 4)) -r 4 -d (moa.streams.generators.imbalanced.BinaryImbalancedGenerator -s 5 -i 0.01 -g (moa.streams.generators.SineGenerator -i 5 -f 1)) -r 5 -p 10000 -w 1) -p 10000 -w 1) -p 10000 -w 1) -p 10000 -w 1) -f EMRIL\sine50K_Inc5To1Abr.arff -m 50000
+
+
+WriteStreamToARFFFile -s (ConceptDriftStream -s (moa.streams.generators.imbalanced.BinaryImbalancedGenerator -s 1 -i 0.50 -g (moa.streams.generators.SineGenerator -i 1 -f 1)) -r 1 -d (ConceptDriftStream -s (moa.streams.generators.imbalanced.BinaryImbalancedGenerator -s 2 -i 0.20 -g (moa.streams.generators.SineGenerator -i 2 -f 2)) -r 2 -d (ConceptDriftStream -s (moa.streams.generators.imbalanced.BinaryImbalancedGenerator -s 3 -i 0.10 -g (moa.streams.generators.SineGenerator -i 3 -f 3)) -r 3 -d (ConceptDriftStream -s (moa.streams.generators.imbalanced.BinaryImbalancedGenerator -s 4 -i 0.05 -g (moa.streams.generators.SineGenerator -i 4 -f 4)) -r 4 -d (moa.streams.generators.imbalanced.BinaryImbalancedGenerator -s 5 -i 0.01 -g (moa.streams.generators.SineGenerator -i 5 -f 1)) -r 5 -p 10000 -w 5000) -p 10000 -w 5000) -p 10000 -w 5000) -p 10000 -w 5000) -f EMRIL\sine50K_Inc50To1Grad.arff -m 50000
+
+WriteStreamToARFFFile -s (ConceptDriftStream -s (moa.streams.generators.imbalanced.BinaryImbalancedGenerator -s 1 -i 0.50 -g (moa.streams.generators.SineGenerator -i 1 -f 1)) -r 1 -d (ConceptDriftStream -s (moa.streams.generators.imbalanced.BinaryImbalancedGenerator -s 2 -i 0.20 -g (moa.streams.generators.SineGenerator -i 2 -f 2)) -r 2 -d (ConceptDriftStream -s (moa.streams.generators.imbalanced.BinaryImbalancedGenerator -s 3 -i 0.10 -g (moa.streams.generators.SineGenerator -i 3 -f 3)) -r 3 -d (ConceptDriftStream -s (moa.streams.generators.imbalanced.BinaryImbalancedGenerator -s 4 -i 0.05 -g (moa.streams.generators.SineGenerator -i 4 -f 4)) -r 4 -d (moa.streams.generators.imbalanced.BinaryImbalancedGenerator -s 5 -i 0.01 -g (moa.streams.generators.SineGenerator -i 5 -f 1)) -r 5 -p 10000 -w 1) -p 10000 -w 1) -p 10000 -w 1) -p 10000 -w 1) -f EMRIL\sine50K_Inc50To1Abr.arff -m 50000
+
+
+WriteStreamToARFFFile -s (ConceptDriftStream -s (moa.streams.generators.imbalanced.BinaryImbalancedGenerator -s 1 -i 0.05 -g (moa.streams.generators.SEAGenerator -i 1 -f 1)) -r 1 -d (ConceptDriftStream -s (moa.streams.generators.imbalanced.BinaryImbalancedGenerator -s 2 -i 0.04 -g (moa.streams.generators.SEAGenerator -i 2 -f 2)) -r 2 -d (ConceptDriftStream -s (moa.streams.generators.imbalanced.BinaryImbalancedGenerator -s 3 -i 0.03 -g (moa.streams.generators.SEAGenerator -i 3 -f 3)) -r 3 -d (ConceptDriftStream -s (moa.streams.generators.imbalanced.BinaryImbalancedGenerator -s 4 -i 0.02 -g (moa.streams.generators.SEAGenerator -i 4 -f 4)) -r 4 -d (moa.streams.generators.imbalanced.BinaryImbalancedGenerator -s 5 -i 0.01 -g (moa.streams.generators.SEAGenerator -i 5 -f 1)) -r 5 -p 10000 -w 5000) -p 10000 -w 5000)-p 10000 -w 5000) -p 10000 -w 5000) -f EMRIL\sea5K_Inc50To1Grad.arff -m 50000
+
+WriteStreamToARFFFile -s (ConceptDriftStream -s (moa.streams.generators.imbalanced.BinaryImbalancedGenerator -s 1 -i 0.05 -g (moa.streams.generators.SEAGenerator -i 1 -f 1)) -r 1 -d (ConceptDriftStream -s (moa.streams.generators.imbalanced.BinaryImbalancedGenerator -s 2 -i 0.04 -g (moa.streams.generators.SEAGenerator -i 2 -f 2)) -r 2 -d (ConceptDriftStream -s (moa.streams.generators.imbalanced.BinaryImbalancedGenerator -s 3 -i 0.03 -g (moa.streams.generators.SEAGenerator -i 3 -f 3)) -r 3 -d (ConceptDriftStream -s (moa.streams.generators.imbalanced.BinaryImbalancedGenerator -s 4 -i 0.02 -g (moa.streams.generators.SEAGenerator -i 4 -f 4)) -r 4 -d (moa.streams.generators.imbalanced.BinaryImbalancedGenerator -s 5 -i 0.01 -g (moa.streams.generators.SEAGenerator -i 5 -f 1)) -r 5 -p 10000 -w 1) -p 10000 -w 1)-p 10000 -w 1) -p 10000 -w 1) -f EMRIL\sea50K_Inc5To1Abr.arff -m 50000
+
+
+
+WriteStreamToARFFFile -s (ConceptDriftStream -s (moa.streams.generators.imbalanced.BinaryImbalancedGenerator -s 1 -i 0.50 -g (moa.streams.generators.SEAGenerator -i 1 -f 1)) -r 1 -d (ConceptDriftStream -s (moa.streams.generators.imbalanced.BinaryImbalancedGenerator -s 2 -i 0.20 -g (moa.streams.generators.SEAGenerator -i 2 -f 2)) -r 2 -d (ConceptDriftStream -s (moa.streams.generators.imbalanced.BinaryImbalancedGenerator -s 3 -i 0.10 -g (moa.streams.generators.SEAGenerator -i 3 -f 3)) -r 3 -d (ConceptDriftStream -s (moa.streams.generators.imbalanced.BinaryImbalancedGenerator -s 4 -i 0.05 -g (moa.streams.generators.SEAGenerator -i 4 -f 4)) -r 4 -d (moa.streams.generators.imbalanced.BinaryImbalancedGenerator -s 5 -i 0.01 -g (moa.streams.generators.SEAGenerator -i 5 -f 1)) -r 5 -p 10000 -w 5000) -p 10000 -w 5000)-p 10000 -w 5000) -p 10000 -w 5000) -f EMRIL\sea50K_Inc50To1Grad.arff -m 50000
+
+
+WriteStreamToARFFFile -s (ConceptDriftStream -s (moa.streams.generators.imbalanced.BinaryImbalancedGenerator -s 1 -i 0.50 -g (moa.streams.generators.SEAGenerator -i 1 -f 1)) -r 1 -d (ConceptDriftStream -s (moa.streams.generators.imbalanced.BinaryImbalancedGenerator -s 2 -i 0.20 -g (moa.streams.generators.SEAGenerator -i 2 -f 2)) -r 2 -d (ConceptDriftStream -s (moa.streams.generators.imbalanced.BinaryImbalancedGenerator -s 3 -i 0.10 -g (moa.streams.generators.SEAGenerator -i 3 -f 3)) -r 3 -d (ConceptDriftStream -s (moa.streams.generators.imbalanced.BinaryImbalancedGenerator -s 4 -i 0.05 -g (moa.streams.generators.SEAGenerator -i 4 -f 4)) -r 4 -d (moa.streams.generators.imbalanced.BinaryImbalancedGenerator -s 5 -i 0.01 -g (moa.streams.generators.SEAGenerator -i 5 -f 1)) -r 5 -p 10000 -w 1) -p 10000 -w 1)-p 10000 -w 1) -p 10000 -w 1) -f EMRIL\sea50K_Inc50To1Abr.arff -m 50000
+
+
+
+WriteStreamToARFFFile -s (ConceptDriftStream -s (generators.imbalanced.BinaryImbalancedGenerator -i 0.05 -g generators.MixedGenerator) -d (ConceptDriftStream -s (generators.imbalanced.BinaryImbalancedGenerator -s 2 -i 0.03 -g (generators.MixedGenerator -f 2)) -d (generators.imbalanced.BinaryImbalancedGenerator -i 0.01 -g generators.MixedGenerator) -p 15000 -w 10000 -r 2) -p 15000 -w 10000) -f EMRIL\mixed50K_Inc5To1Grad.arff -m 50000
+
+
+WriteStreamToARFFFile -s (ConceptDriftStream -s (generators.imbalanced.BinaryImbalancedGenerator -i 0.05 -g generators.MixedGenerator) -d (ConceptDriftStream -s (generators.imbalanced.BinaryImbalancedGenerator -s 2 -i 0.03 -g (generators.MixedGenerator -f 2)) -d (generators.imbalanced.BinaryImbalancedGenerator -i 0.01 -g generators.MixedGenerator) -p 15000 -w 1 -r 2) -p 15000 -w 1) -f EMRIL\mixed50K_Inc5To1Abr.arff -m 50000
+
+
+WriteStreamToARFFFile -s (ConceptDriftStream -s (generators.imbalanced.BinaryImbalancedGenerator -i 0.50 -g generators.MixedGenerator) -d (ConceptDriftStream -s (generators.imbalanced.BinaryImbalancedGenerator -s 2 -i 0.10 -g (generators.MixedGenerator -f 2)) -d (generators.imbalanced.BinaryImbalancedGenerator -i 0.01 -g generators.MixedGenerator) -p 15000 -w 10000 -r 2) -p 15000 -w 10000) -f EMRIL\mixed50K_Inc50To1Grad.arff -m 50000
+
+WriteStreamToARFFFile -s (ConceptDriftStream -s (generators.imbalanced.BinaryImbalancedGenerator -i 0.50 -g generators.MixedGenerator) -d (ConceptDriftStream -s (generators.imbalanced.BinaryImbalancedGenerator -s 2 -i 0.10 -g (generators.MixedGenerator -f 2)) -d (generators.imbalanced.BinaryImbalancedGenerator -i 0.01 -g generators.MixedGenerator) -p 15000 -w 1 -r 2) -p 15000 -w 1) -f EMRIL\mixed50K_Inc50To1Abr.arff -m 50000
+-----------------
