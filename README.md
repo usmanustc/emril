@@ -3,7 +3,7 @@ _Welcome to this repository !_
 
 This repository contains the code and data used in the paper:
 
-__EMRIL : Ensemble Method based on ReInforcement Learning for binary classification in imbalanced drifting data streams, Submitted to Neurocomputing 2024. 
+**EMRIL** : Ensemble Method based on ReInforcement Learning for binary classification in imbalanced drifting data streams, Submitted to Neurocomputing 2024. 
 
 The main code file is available at the root folder in the form of Jupyter Notebook. The code is written in Python and may require some libraries to be installed prior to running. All synthetic data streams could be generated using the scripts available in data streams folder. Virtual and Real-world data streams used in the experiments are also available in a folder at root. Some data streams are heavier in size and could be obtained by correspondence with the authors.
 
